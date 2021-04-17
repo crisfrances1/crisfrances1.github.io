@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> INDEX </title>
+    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+
+    <h1> IMMORTALIS UMBRA </h1>
+
+    <div id="outterDiv">
+      <div id="progressBar" width="800" height="30">
+        <div id="progressFill"></div> <span id="timer"></span>
+      </div>
+      <canvas id="canvastop" width="800" height="500">Your broswer does not support canvas.
+        Please try again with a different browser</canvas>
+      <canvas id="canvasbottom" width="800" height="500">Your broswer does not support canvas.
+        Please try again with a different browser</canvas>
+
+    </div><br>
+    <div class="buttonsDiv">
+      <button class="index_buttons" id = "start_gameB" onclick="startFunction()">START GAME</button>
+      <button class="index_buttons" onclick="location.href='instructions.html'" type="button">INSTRUCTIONS</button>
+
+      <button class="start_scene" id="elfin_choice" onclick="choseElfin()">Elfin Forest</button>
+      <button class="start_scene" id="ruins_choice" onclick="choseRuins()">Gantrick Ruins</button>
+      <button class="elfin_scene" id="elfin_hide_choice" onclick="caveScene()">Hide!</button>
+      <button class="elfin_scene" id="elfin_run_choice" onclick="qsScene()">Run!</button>
+      <button class="elfin_scene" id="elfin_shout_choice" onclick="qsScene()">Shout: Who's there?</button>
+      <button class="ruins_scene" id="ruins_knive_choice" onclick="riddleScene()">Use knive</button>
+      <button class="ruins_scene" id="ruins_spell_choice">Use spell</button>
+      <button class="riddle_scene" id="riddle_man_choice">Answer Riddle</button>
+      <button class="riddle_scene" id="riddle_fight_choice" onclick="overDeath()">Try to get past Nimue</button>
+      <button class="cave_scene" id="cave_knive_choice" onclick="overDeath()">Use Knive</button>
+      <button class="cave_scene" id="cave_spell_choice" onclick="finalScene()">Use spell</button>
+      <button class="qs_scene" id="quicksand_move_choice" onclick="overDeath()">Try to move</button>
+      <button class="qs_scene" id="quicksand_backp_choice" onclick="finalScene()">Take backpack off</button>
+      <button class="final_scene" id="final_kill_choice">Choose who to kill</button>
+      <button class="end_play_again" onclick="playAgain()">PLAY AGAIN</button>
+
+      <button id="menu_button" onclick="reload()"><i class="fa fa-home"></i></button>
+      <button id="settings_button" type="button">SETTINGS</button>
+    </div>
+
+    <div class="modal" id="settingsModal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p class="head_instruc">SETTINGS!</p><br>
+        <button type="button" id="muteButton" onClick="toggle_mute()">MUTE</button>
+        <button class="overButtons" onclick="playAgain()">PLAY AGAIN</button>
+        <audio id="forestAudio" src="./Sounds/sound.mp3" loop>
+        </audio>
+      </div>
+    </div>
+
+    <div class="modal" id="gameOverModal">
+      <div class="modal-content">
+        <p class="head_instruc">GAME OVER!</p>
+        <p id="gameover">The game ended! Thank you so much for playing, hope you enjoyed it!
+          What would you like to do next? You can choose to play again or you can see
+          what buttons you chose during the game ! </p> <br>
+        <button class="overButtons" onclick="playAgain()">PLAY AGAIN</button>
+        <button class="overButtons" id="choicesLog">SEE CHOICES</button>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="game.js"></script>
+  </body>
+</html>
