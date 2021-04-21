@@ -224,6 +224,11 @@ function endRace(){
 }
 
 //-----------------------------------PLAYER----------------------------------
+/*
+Code from Frank Laboratories on Youtube: Spritesheet aniamtion with vanilla
+JavaScript: https://www.youtube.com/watch?v=EYf_JwzwTlQ
+Some changes added/made by me to adapt code to my own project
+*/
 
 //array to keep track of what keys the user presses
 const keys = [];
@@ -270,7 +275,7 @@ function movePlayer(){
     player.moving = true;
   }
   //if right arrow (key 39) is pressed
-  if (keys[39] && player.x < canvas_top.width - player.width/2){ //if key 38 is true == if right arrow is pressed and y position is more than 0px away from top
+  if (keys[39] && player.x < canvas_top.width - player.width/2){
     player.x += player.speed;
     player.frameY = 2;
     player.moving = true;
@@ -364,6 +369,11 @@ kill_choice.onclick = function(){
 }
 
 //--------------------------------GAME TIMER-------------------------------
+/*
+Code from Ishan on Code pen: 5 minute countdown timer with JavaScript:
+https://codepen.io/ishanbakshi/pen/pgzNMv?css-preprocessor=postcss
+Some changes added/made by me to adapt code to my own project
+*/
 
 var timer_var = document.getElementById("timer");
 timer_var.innerHTML = 005 + ":0" + 0;
